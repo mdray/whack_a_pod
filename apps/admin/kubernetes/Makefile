@@ -29,7 +29,7 @@ reset.safe:
 app: build deploy
 
 main:
-	go get github.com/gorilla/mux
+	go install github.com/gorilla/mux@latest
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o "$(BASEDIR)/../containers/main" "$(BASEDIR)/../containers/main.go" "$(BASEDIR)/../containers/kubernetes.go"	
 
 build: env main
